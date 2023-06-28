@@ -35,25 +35,15 @@ p {
 }
 
 /* || Phone mockup */
-.container {
-    height: 100vh;
-    width: 100vw;
-    overflow: hidden;
-}
-
-.mockup-mask {
-    position: fixed;
-    width: 100vw;
-    height: 100vh;
-}
-
 .mock-up-img {
     /* for model only */
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    z-index: 0;
+    z-index: 1;
+    pointer-events: none;
+    /* opacity: 0.2; */
 }
 
 .content-outer {
@@ -64,20 +54,12 @@ p {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    z-index: -1;
-
-    overflow: hidden;
-}
-
-.content-inner {
-    width: 100%;
-    height: auto;
-
-    border-radius: 30px;
     overflow-y: scroll;
+    overflow-x: hidden;
+    z-index: 0;
 }
 
-.content-inner::-webkit-scrollbar {
+.content-outer::-webkit-scrollbar {
     width: 0 !important
 }
 
@@ -89,6 +71,8 @@ nav {
     background-image: url("./assets/texture/nnnoise.svg");
     background-repeat: no-repeat;
     background-size: cover;
+    border-top-left-radius: 3rem;
+    border-top-right-radius: 3rem;
 
     box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 
