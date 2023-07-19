@@ -4,125 +4,235 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://api.fontshare.com/v2/css?f[]=sentient@400&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./styles/style.css">
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script>
     <title>Today's Weather</title>
 </head>
 
 <body>
     <div class="container">
-        <img class="mock-up-img" src="./assets/phone-mockup6.png" alt="">
+        <img class="mock-up-img" src="../assets/phone-mockup6.png" alt="">
         <div class="content-outer">
-            <div class="content-inner">
-                <header>
-                    <nav>
-                        <div class="logo">
-                            <img src="./assets/nav/logo.svg" alt="brand logo">
+            <div class="content-inner grid-container">
+                <header class="grid-item header">
+                    <nav class="nav">
+                        <div class="icon-logo">
+                            <img src="../assets/logo.svg" alt="brand logo">
                         </div>
-                        <div class="collapse-menu">
-                            <img src="./assets/nav/menu.svg" alt="hamburger menu">
+                        <div class="icon-location">
+                            <img src="../assets/location.svg" alt="set location">
                         </div>
                     </nav>
                 </header>
-                <main>
-                    <section class="today-weather">
-                        <div class="weather-card">
-                            <div class="card-img">
-                                <img class="weather-img" src="./assets/sun/default.svg" alt="sunny weather">
-                            </div>
-                            <div class="card-body">
-                                <h1>36<sup>°</sup></h1>
-                                <div class="weather-location">
-                                    <img src="./assets/card/location.svg" alt="location" width="10rem">
-                                    <p>New Delhi, Delhi, India</p>
+                <main class="grid-item main">
+                    <section class="hero">
+                        <div class="items">
+                            <div class="item item1">
+                                <div class="bg-img">
+                                    <img src="../assets/sunny.svg" alt="Sunny weather">
+                                </div>
+                                <div class="info">
+                                    <div class="temp">
+                                        <h1 class="">32 <sup>°<sub>C</sub></sup></h1>
+                                        <p>Sunny</p>
+                                    </div>
+                                    <div class="humidity">
+                                        <div>
+                                            <h6>Precipitation</h6>
+                                            <p>16%</p>
+                                        </div>
+                                        <div>
+                                            <h6>Humidity</h6>
+                                            <p>86%</p>
+                                        </div>
+                                    </div>
+                                    <div class="geographic">
+                                        <div>
+                                            <h3>New Delhi</h3>
+                                            <p>India</p>
+                                        </div>
+                                        <div>
+                                            <h3>
+                                                <time>06:36 PM</time>
+                                            </h3>
+                                            <p>Saturday</p>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="weather-carousel">
-                            <img src="./assets/card/carousel-selected.svg" alt="selected carousel">
-                            <img src="./assets/card/carousel-unselected-1.svg" alt="unselected carousel">
-                            <img src="./assets/card/carousel-unselected-2.svg" alt="unselected carousel">
+                            <div class="item item2">
+                                <div class="bg-img">
+                                    <img src="../assets/rainy.svg" alt="Rainy weather">
+                                </div>
+                                <div class="info">
+                                    <div class="temp">
+                                        <h1>23 <sup>℃</sup></h1>
+                                        <p>Rainy</p>
+                                    </div>
+                                    <div class="humidity">
+                                        <div>
+                                            <h6>Precipitation</h6>
+                                            <p>56%</p>
+                                        </div>
+                                        <div>
+                                            <h6>Humidity</h6>
+                                            <p>56%</p>
+                                        </div>
+                                    </div>
+                                    <div class="geographic">
+                                        <div>
+                                            <h3>Mumbai</h3>
+                                            <p>India</p>
+                                        </div>
+                                        <div>
+                                            <h3>
+                                                <time>06:36 PM</time>
+                                            </h3>
+                                            <p>Saturday</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item item3">
+                                <div class="bg-img">
+                                    <img src="../assets/thunder.svg" alt="Thunder weather">
+                                </div>
+                                <div class="info">
+                                    <div class="temp">
+                                        <h1>22 <sup>℃</sup></h1>
+                                        <p>Thunder</p>
+                                    </div>
+                                    <div class="humidity">
+                                        <div>
+                                            <h6>Precipitation</h6>
+                                            <p>36%</p>
+                                        </div>
+                                        <div>
+                                            <h6>Humidity</h6>
+                                            <p>36%</p>
+                                        </div>
+                                    </div>
+                                    <div class="geographic">
+                                        <div>
+                                            <h3>Bangalore</h3>
+                                            <p>India</p>
+                                        </div>
+                                        <div>
+                                            <h3>
+                                                <time>06:36 PM</time>
+                                            </h3>
+                                            <p>Saturday</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </section>
-                    <section class="today-weather">
-                        <div class="weather-card">
-                            <div class="card-img">
-                                <img class="weather-img" src="./assets/sun/default.svg" alt="sunny weather">
-                            </div>
-                            <div class="card-body">
-                                <h1>36<sup>°</sup></h1>
-                                <div class="weather-location">
-                                    <img src="./assets/card/location.svg" alt="location" width="10rem">
-                                    <p>New Delhi, Delhi, India</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="weather-carousel">
-                            <img src="./assets/card/carousel-selected.svg" alt="selected carousel">
-                            <img src="./assets/card/carousel-unselected-1.svg" alt="unselected carousel">
-                            <img src="./assets/card/carousel-unselected-2.svg" alt="unselected carousel">
-                        </div>
+
+                    <section class="change-location">
+                        <p>Change location</p>
+                        <img src="../assets/location.svg" alt="Change location">
                     </section>
-                    <section class="today-weather">
-                        <div class="weather-card">
-                            <div class="card-img">
-                                <img class="weather-img" src="./assets/sun/default.svg" alt="sunny weather">
-                            </div>
-                            <div class="card-body">
-                                <h1>36<sup>°</sup></h1>
-                                <div class="weather-location">
-                                    <img src="./assets/card/location.svg" alt="location" width="10rem">
-                                    <p>New Delhi, Delhi, India</p>
-                                </div>
-                            </div>
+
+                    <section class="week">
+                        <div class="bg-img">
+                            <img src="../assets/week.svg" alt="Background image">
                         </div>
-                        <div class="weather-carousel">
-                            <img src="./assets/card/carousel-selected.svg" alt="selected carousel">
-                            <img src="./assets/card/carousel-unselected-1.svg" alt="unselected carousel">
-                            <img src="./assets/card/carousel-unselected-2.svg" alt="unselected carousel">
-                        </div>
-                    </section>
-                    <section class="today-weather">
-                        <div class="weather-card">
-                            <div class="card-img">
-                                <img class="weather-img" src="./assets/sun/default.svg" alt="sunny weather">
+                        <div class="info">
+                            <div class="card active">
+                                <p class="day">Sat</p>
+                                <p class="date"><time>06/07</time></p>
+                                <img class="weather-icon" src="../assets/rainy-icon.svg" alt="Raining icon">
+                                <p class="temp">
+                                    <span>32%</span>
+                                    <span>27%</span>
+                                </p>
                             </div>
-                            <div class="card-body">
-                                <h1>36<sup>°</sup></h1>
-                                <div class="weather-location">
-                                    <img src="./assets/card/location.svg" alt="location" width="10rem">
-                                    <p>New Delhi, Delhi, India</p>
-                                </div>
+                            <div class="card">
+                                <p class="day">Sun</p>
+                                <p class="date"><time>07/07</time></p>
+                                <img class="weather-icon" src="../assets/windy-icon.svg" alt="Wind icon">
+                                <p class="temp">
+                                    <span>25%</span>
+                                    <span>22%</span>
+                                </p>
                             </div>
-                        </div>
-                        <div class="weather-carousel">
-                            <img src="./assets/card/carousel-selected.svg" alt="selected carousel">
-                            <img src="./assets/card/carousel-unselected-1.svg" alt="unselected carousel">
-                            <img src="./assets/card/carousel-unselected-2.svg" alt="unselected carousel">
-                        </div>
-                    </section>
-                    <section class="today-weather">
-                        <div class="weather-card">
-                            <div class="card-img">
-                                <img class="weather-img" src="./assets/sun/default.svg" alt="sunny weather">
+                            <div class="card">
+                                <p class="day">Mon</p>
+                                <p class="date"><time>08/07</time></p>
+                                <img class="weather-icon" src="../assets/sunny-rain-icon.svg" alt="Rain with sun icon">
+                                <p class="temp">
+                                    <span>25%</span>
+                                    <span>22%</span>
+                                </p>
                             </div>
-                            <div class="card-body">
-                                <h1>36<sup>°</sup></h1>
-                                <div class="weather-location">
-                                    <img src="./assets/card/location.svg" alt="location" width="10rem">
-                                    <p>New Delhi, Delhi, India</p>
-                                </div>
+                            <div class="card">
+                                <p class="day">Mon</p>
+                                <p class="date"><time>08/07</time></p>
+                                <img class="weather-icon" src="../assets/sunny-rain-icon.svg" alt="Rain with sun icon">
+                                <p class="temp">
+                                    <span>25%</span>
+                                    <span>22%</span>
+                                </p>
                             </div>
-                        </div>
-                        <div class="weather-carousel">
-                            <img src="./assets/card/carousel-selected.svg" alt="selected carousel">
-                            <img src="./assets/card/carousel-unselected-1.svg" alt="unselected carousel">
-                            <img src="./assets/card/carousel-unselected-2.svg" alt="unselected carousel">
+                            <div class="card">
+                                <p class="day">Mon</p>
+                                <p class="date"><time>08/07</time></p>
+                                <img class="weather-icon" src="../assets/sunny-rain-icon.svg" alt="Rain with sun icon">
+                                <p class="temp">
+                                    <span>25%</span>
+                                    <span>22%</span>
+                                </p>
+                            </div>
+                            <div class="card">
+                                <p class="day">Mon</p>
+                                <p class="date"><time>08/07</time></p>
+                                <img class="weather-icon" src="../assets/sunny-rain-icon.svg" alt="Rain with sun icon">
+                                <p class="temp">
+                                    <span>25%</span>
+                                    <span>22%</span>
+                                </p>
+                            </div>
+                            <div class="card">
+                                <p class="day">Mon</p>
+                                <p class="date"><time>08/07</time></p>
+                                <img class="weather-icon" src="../assets/sunny-rain-icon.svg" alt="Rain with sun icon">
+                                <p class="temp">
+                                    <span>25%</span>
+                                    <span>22%</span>
+                                </p>
+                            </div>
                         </div>
                     </section>
                 </main>
+                <footer class="grid-item footer">
+                    <div class="logo">
+                        <img src="../assets/logo.svg" alt="Brand logo">
+                        <h3>WeatherApp</h3>
+                    </div>
+                    <div class="email">
+                        <form action="POST">
+                            <label for="email">Get in touch with us</label>
+                            <input type="email" placeholder="enter your email" id="email" name="email">
+                            <button type="submit">Submit</button>
+                        </form>
+                    </div>
+                    <div class="contact">
+                        <p>email@gmail.com</p>
+                        <p>090190-109290</p>
+                    </div>
+                    <div class="to-top">
+                        <img src="../assets/arrow-up.svg" alt="Go to top">
+                        <p>To Top</p>
+                    </div>
+                </footer>
             </div>
         </div>
     </div>
+    <script src="./scripts/script.js"></script>
 </body>
 
 </html>
