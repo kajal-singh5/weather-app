@@ -47,6 +47,13 @@ p {
     font-weight: 300;
 }
 
+.subheading {
+    color: #3B3A3A;
+    font-family: 'Nunito';
+    font-size: 1rem;
+    font-weight: 400;
+    letter-spacing: 0.05rem;
+}
 
 /* || PHONE MOCKUP */
 .mock-up-img {
@@ -345,18 +352,18 @@ input:checked + .item {
     backdrop-filter: blur(7.5px);
 
     display: grid;
-    grid-template: 1fr 1fr 1fr / 1fr 1fr;
+    grid-template: repeat(3, auto) / auto 4rem;
     grid-template-areas: 
     "logo logo"
     "email email"
     "contact top";
-    row-gap: 1.5rem;
+    row-gap: 2rem;
 }
 
 .logo {
     grid-area: logo;
     display: grid;
-    grid-template: 1fr / 50px 1fr;
+    grid-template: 1fr / 3rem 1fr;
     justify-items: baseline;
     column-gap: 1rem;
 }
@@ -367,11 +374,10 @@ input:checked + .item {
 
 .email form {
     display: grid;
-    grid-template: 1fr 1fr / 1fr 5.5rem;
+    grid-template: 1fr 1fr / auto 5.5rem;
     grid-template-areas:
     "label label"
     "input button";
-    row-gap: 0.25rem;
 }
 
 .email label {
@@ -386,6 +392,10 @@ input:checked + .item {
     border-top-left-radius: 0.375rem;
     border-bottom-right-radius: 0.375rem;
     background: #ffffffbf;
+}
+
+.email input:s {
+    border: 1px solid #f0a148;
 }
 
 .email button {
@@ -405,8 +415,46 @@ input:checked + .item {
 
 .contact {
     grid-area: contact;
+
+    display: grid;
+    grid-template: 1fr 1fr 1fr / 1fr;    
+    grid-template-areas: 
+    "contactUs"
+    "emailAddress"
+    "phone";
+    row-gap: 0.25rem;
+}
+
+.contact p:first-child {
+    grid-area: contactUs;
+}
+
+.contact p:nth-child(2) {
+    grid-area: emailAddress;
+}
+
+.contact p:last-child {
+    grid-area: phone;
 }
 
 .to-top {
     grid-area: top;
+    align-self: last baseline;
+    justify-self: center;
+
+    display: grid;
+    grid-template: 1fr 1fr / 1fr;
+    grid-template-areas: 
+    "arrow"
+    "text";
+    row-gap: 0.75rem;
+}
+
+.to-top img {
+    grid-area: arrow;
+    justify-self: center;
+}
+
+.to-top p {
+    grid-area: text;
 }
