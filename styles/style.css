@@ -145,7 +145,7 @@ p {
 }
 
 .items {
-    height: 700px;
+    height: 100%;
     position: relative;
     overflow-x: hidden;
     overflow-y: hidden;
@@ -169,6 +169,11 @@ p {
     transition: all .7s ease-in-out;
 }
 
+.item .bg-img img {
+    max-height: 80%;
+    width: 100%;
+}
+
 .item .info {
     display: grid;
     grid-template-columns: 1fr;
@@ -182,7 +187,7 @@ p {
     position: absolute;
     top: 0;
     width: 100%;
-    height: 100%;
+    height: 95%;
 }
 
 .item .temp {
@@ -200,8 +205,8 @@ p {
     display: grid;
     grid-template: 1fr / 2fr;
     grid-template-areas: "h1 h2";
-
-    text-align: center;
+    justify-self: center;
+    align-items: center;
 }
 
 .item .humidity div:first-child {
@@ -219,6 +224,7 @@ p {
     display: grid;
     grid-template: 2fr / 1fr;
     grid-template-areas: "h1 h2";
+    align-self: self-end;
 }
 
 .item .geographic div:first-child {
@@ -239,7 +245,7 @@ p {
     position: absolute;
     left: 0;
     right: 0;
-    bottom: 10px;
+    bottom: 0;
     z-index: 999;
     text-align: center;
 }
@@ -301,6 +307,10 @@ input:checked + .item {
     object-fit: cover;
 }
 
+.week .bg-img img {
+    width: 100%;
+}
+
 .week .info {
     position: absolute;
     top: 8%;
@@ -315,6 +325,10 @@ input:checked + .item {
     "heading"
     ".";
     gap: 1rem;
+}
+
+.week .info h2 {
+    padding-left: 1.5rem;
 }
 
 .week .card {
@@ -457,4 +471,20 @@ input:checked + .item {
 
 .to-top p {
     grid-area: text;
+}
+
+/* || MEDIA QUERIES */
+@media (max-width: 420px) {
+    .mock-up-img {
+        display: none;
+    }
+
+    .content-outer {
+        width: 100vw;
+        height: 100vh;
+    }
+
+    .main {
+        grid-template-rows: 90vh 20vh 150vh;
+    }
 }
