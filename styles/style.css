@@ -27,6 +27,11 @@ h1 {
     font-weight: 600;
 }
 
+h2 {
+    font-size: 2rem;
+    font-weight: 700;
+}
+
 h3 {
     font-size: 1.5rem;
     font-weight: 300;
@@ -119,14 +124,15 @@ p {
     grid-area: main;
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: 700px 200px 410px;
+    grid-template-rows: 700px 200px 1200px;
     grid-template-areas: 
     "hero"
     "location"
     "week";
+    margin-bottom: 4rem;
 }
 
-/* || HERO */
+/* || CAROUSEL */
 .hero {
     grid-area: hero;
 }
@@ -134,25 +140,26 @@ p {
 .items {
     height: 700px;
     position: relative;
-    overflow-x: scroll;
+    overflow-x: hidden;
     overflow-y: hidden;
     white-space: nowrap;
     transition: all 0.2s;
     will-change: transform;
     user-select: none;
-    cursor: grab;
 }
 
-.items.active {
-    cursor: grabbing;
-    cursor: -webkit-grabbing;
+.items * {
+    user-select: none;
 }
 
 .item {
     display: inline-block;
-    position: relative;
+    position: absolute;
+    top: 0;
     width: 100%;
     height: 100%;
+    opacity: 0;
+    transition: all .7s ease-in-out;
 }
 
 .item .info {
@@ -203,22 +210,203 @@ p {
 .item .geographic {
     grid-area: geo;
     display: grid;
-    grid-template: 1fr / 2fr;
+    grid-template: 2fr / 1fr;
     grid-template-areas: "h1 h2";
 }
 
 .item .geographic div:first-child {
-    margin: 2rem 1.5rem;
+    margin: 1rem 1.5rem;
+    grid-area: h1;
 }
 
 .item .geographic div:last-child {
-    margin: 2rem 1.5rem;
+    margin: 1rem 1.5rem;
+    grid-area: h2;
 }
 
+.items input {
+    display: none;
+}
+
+.carousel-dots {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 10px;
+    z-index: 999;
+    text-align: center;
+}
+
+.carousel-dots .dot {
+    display: inline-block;
+    width: 0.75rem;
+    height: 0.75rem;
+    border-radius: 50%;
+    background-color: rgb(240, 161, 72);
+    opacity: 0.25;
+    margin: 10px;
+}
+
+input:checked + .item {
+    opacity: 1;
+    transform: scale(1);
+    transition: opacity 1s ease-in-out;
+}
+
+#slide-1:checked ~ .carousel-dots #dot-1,
+#slide-2:checked ~ .carousel-dots #dot-2,
+#slide-3:checked ~ .carousel-dots #dot-3 {
+	opacity: 1;
+}
+
+/* || LOCATION */
 .change-location {
     grid-area: location;
+    
+    display: inline-flex;
+    padding: 2rem;
+    margin: auto 1rem;
+    height: 50%;
+    width: 90%;
+    
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 3rem;
+    flex-shrink: 0;
+
+    border-radius: 0.625rem;
+    background: #F9F9F9;
 }
 
+/* || WEEK */
 .week {
     grid-area: week;
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.week .bg-img,
+.week .bg-img img {
+    height: 100%;
+    object-fit: cover;
+}
+
+.week .info {
+    position: absolute;
+    top: 8%;
+    width: 100%;
+    height: 100%;
+
+    display: grid;
+    grid-template: repeat(10, 1fr) / 1fr;
+    grid-template-areas:
+    "."
+    "."
+    "heading"
+    ".";
+    gap: 1rem;
+}
+
+.week .card {
+    display: grid;
+    grid-template: 1fr / 1fr 1fr 1fr;
+    padding: 1rem;
+    margin: 0 auto;
+
+    border-radius: 1.5rem;
+    background: #FAFAFA;
+    box-shadow: 0px 2px 6px 0px rgba(0, 0, 0, 0.15);
+
+    width: 90%;
+    text-align: center;
+}
+
+.week .card > div {
+    padding: 0.25rem 0.5rem;
+    display: grid;
+    grid-template: 1fr 1fr / 1fr;
+    justify-items: center;
+    align-items: center;
+}
+
+.week .card p {
+    font-size: 1.1rem;
+    letter-spacing: 0.01rem;
+}
+
+/* || FOOTER */
+.footer {
+    padding: 2rem 1rem;
+    background: linear-gradient(0deg, #0000000a 0%, #0000000a 100%), #ffffff40;
+    box-shadow: 0px 2px 12px 0px #00000026;
+    backdrop-filter: blur(7.5px);
+
+    display: grid;
+    grid-template: 1fr 1fr 1fr / 1fr 1fr;
+    grid-template-areas: 
+    "logo logo"
+    "email email"
+    "contact top";
+    row-gap: 1.5rem;
+}
+
+.logo {
+    grid-area: logo;
+    display: grid;
+    grid-template: 1fr / 50px 1fr;
+    justify-items: baseline;
+    column-gap: 1rem;
+}
+
+.email {
+    grid-area: email;
+}
+
+.email form {
+    display: grid;
+    grid-template: 1fr 1fr / 1fr 5.5rem;
+    grid-template-areas:
+    "label label"
+    "input button";
+    row-gap: 0.25rem;
+}
+
+.email label {
+    grid-area: label;
+}
+
+.email input {
+    grid-area: input;
+    padding: 0.375rem 1rem;
+
+    border: 1px solid transparent;
+    border-top-left-radius: 0.375rem;
+    border-bottom-right-radius: 0.375rem;
+    background: #ffffffbf;
+}
+
+.email button {
+    grid-area: button; 
+    border: 1px solid transparent;
+    border-top-right-radius: 0.375rem;
+    border-bottom-right-radius: 0.375rem;
+    background: #ffffffbf;
+
+    color:#f0a148;
+}
+
+.email button:hover,
+.email button:focus {
+    background: #f1f1f1c5;
+}
+
+.contact {
+    grid-area: contact;
+}
+
+.to-top {
+    grid-area: top;
 }

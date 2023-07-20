@@ -8,7 +8,6 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./styles/style.css">
-    <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script>
     <title>Today's Weather</title>
 </head>
 
@@ -20,19 +19,21 @@
                 <header class="grid-item header">
                     <nav class="nav">
                         <div class="icon-logo">
-                            <img src="../assets/logo.svg" alt="brand logo">
+                            <img src="./assets/header/logo.svg" alt="brand logo">
                         </div>
                         <div class="icon-location">
-                            <img src="../assets/location.svg" alt="set location">
+                            <img src="./assets/header/location.svg" alt="set location">
                         </div>
                     </nav>
                 </header>
                 <main class="grid-item main">
                     <section class="hero">
                         <div class="items">
+
+                            <input type="radio" name="carousel-radio" id="slide-1" checked>
                             <div class="item item1">
                                 <div class="bg-img">
-                                    <img src="../assets/sunny.svg" alt="Sunny weather">
+                                    <img src="./assets/carousel/sunny.svg" alt="Sunny weather">
                                 </div>
                                 <div class="info">
                                     <div class="temp">
@@ -63,9 +64,11 @@
                                     </div>
                                 </div>
                             </div>
+
+                            <input type="radio" name="carousel-radio" id="slide-2">
                             <div class="item item2">
                                 <div class="bg-img">
-                                    <img src="../assets/rainy.svg" alt="Rainy weather">
+                                    <img src="./assets/carousel/rainy.svg" alt="Rainy weather">
                                 </div>
                                 <div class="info">
                                     <div class="temp">
@@ -96,9 +99,11 @@
                                     </div>
                                 </div>
                             </div>
+
+                            <input type="radio" name="carousel-radio" id="slide-3">
                             <div class="item item3">
                                 <div class="bg-img">
-                                    <img src="../assets/thunder.svg" alt="Thunder weather">
+                                    <img src="./assets/carousel/thunder.svg" alt="Thunder weather">
                                 </div>
                                 <div class="info">
                                     <div class="temp">
@@ -129,89 +134,133 @@
                                     </div>
                                 </div>
                             </div>
+
+                            <div class="carousel-dots">
+                                <label for="slide-1" class="dot" id="dot-1"></label>
+                                <label for="slide-2" class="dot" id="dot-2"></label>
+                                <label for="slide-3" class="dot" id="dot-3"></label>
+                            </div>
+
                         </div>
                     </section>
 
                     <section class="change-location">
                         <p>Change location</p>
-                        <img src="../assets/location.svg" alt="Change location">
+                        <img src="./assets/change-location/location.svg" alt="Change location">
                     </section>
 
                     <section class="week">
                         <div class="bg-img">
-                            <img src="../assets/week.svg" alt="Background image">
+                            <img src="./assets/week/bg.svg" alt="Background image">
                         </div>
+
                         <div class="info">
+                            <h2>This Week</h2>
                             <div class="card active">
-                                <p class="day">Sat</p>
-                                <p class="date"><time>06/07</time></p>
-                                <img class="weather-icon" src="../assets/rainy-icon.svg" alt="Raining icon">
-                                <p class="temp">
-                                    <span>32%</span>
-                                    <span>27%</span>
-                                </p>
+                                <div>
+                                    <img src="./assets/week/rainy-icon.svg" alt="Raining">
+                                    <p>Rainy</p>
+                                </div>
+                                <div>
+                                    <h6>Sat</h6>
+                                    <p><time>06/07</time></p>
+                                </div>
+                                <div>
+                                    <p>32°C</p>
+                                    <p>27°C</p>
+                                </div>
                             </div>
                             <div class="card">
-                                <p class="day">Sun</p>
-                                <p class="date"><time>07/07</time></p>
-                                <img class="weather-icon" src="../assets/windy-icon.svg" alt="Wind icon">
-                                <p class="temp">
-                                    <span>25%</span>
-                                    <span>22%</span>
-                                </p>
+                                <div>
+                                    <img src="./assets/week/cloudy-with-sunny-icon.svg" alt="Cloudy with sun">
+                                    <p>Cloudy with Sun</p>
+                                </div>
+                                <div>
+                                    <h6>Sun</h6>
+                                    <p><time>07/07</time></p>
+                                </div>
+                                <div>
+                                    <p>32°C</p>
+                                    <p>27°C</p>
+                                </div>
                             </div>
                             <div class="card">
-                                <p class="day">Mon</p>
-                                <p class="date"><time>08/07</time></p>
-                                <img class="weather-icon" src="../assets/sunny-rain-icon.svg" alt="Rain with sun icon">
-                                <p class="temp">
-                                    <span>25%</span>
-                                    <span>22%</span>
-                                </p>
+                                <div>
+                                    <img src="./assets/week/thunder-icon.svg" alt="Thunder">
+                                    <p>Thunder</p>
+                                </div>
+                                <div>
+                                    <h6>Mon</h6>
+                                    <p><time>08/07</time></p>
+                                </div>
+                                <div>
+                                    <p>32°C</p>
+                                    <p>27°C</p>
+                                </div>
                             </div>
                             <div class="card">
-                                <p class="day">Mon</p>
-                                <p class="date"><time>08/07</time></p>
-                                <img class="weather-icon" src="../assets/sunny-rain-icon.svg" alt="Rain with sun icon">
-                                <p class="temp">
-                                    <span>25%</span>
-                                    <span>22%</span>
-                                </p>
+                                <div>
+                                    <img src="./assets/week/windy-icon.svg" alt="Windy">
+                                    <p>Windy</p>
+                                </div>
+                                <div>
+                                    <h6>Tues</h6>
+                                    <p><time>09/07</time></p>
+                                </div>
+                                <div>
+                                    <p>32°C</p>
+                                    <p>27°C</p>
+                                </div>
                             </div>
                             <div class="card">
-                                <p class="day">Mon</p>
-                                <p class="date"><time>08/07</time></p>
-                                <img class="weather-icon" src="../assets/sunny-rain-icon.svg" alt="Rain with sun icon">
-                                <p class="temp">
-                                    <span>25%</span>
-                                    <span>22%</span>
-                                </p>
+                                <div>
+                                    <img src="./assets/week/sunny.svg" alt="Sunny">
+                                    <p>Sunny</p>
+                                </div>
+                                <div>
+                                    <h6>Wed</h6>
+                                    <p><time>10/07</time></p>
+                                </div>
+                                <div>
+                                    <p>32°C</p>
+                                    <p>27°C</p>
+                                </div>
                             </div>
                             <div class="card">
-                                <p class="day">Mon</p>
-                                <p class="date"><time>08/07</time></p>
-                                <img class="weather-icon" src="../assets/sunny-rain-icon.svg" alt="Rain with sun icon">
-                                <p class="temp">
-                                    <span>25%</span>
-                                    <span>22%</span>
-                                </p>
+                                <div>
+                                    <img src="./assets/week/cloudy.svg" alt="cloudy">
+                                    <p>Cloudy</p>
+                                </div>
+                                <div>
+                                    <h6>Thurs</h6>
+                                    <p><time>11/07</time></p>
+                                </div>
+                                <div>
+                                    <p>32°C</p>
+                                    <p>27°C</p>
+                                </div>
                             </div>
                             <div class="card">
-                                <p class="day">Mon</p>
-                                <p class="date"><time>08/07</time></p>
-                                <img class="weather-icon" src="../assets/sunny-rain-icon.svg" alt="Rain with sun icon">
-                                <p class="temp">
-                                    <span>25%</span>
-                                    <span>22%</span>
-                                </p>
+                                <div>
+                                    <img src="./assets/week/thunder-with-rain.svg" alt="Thunder with rain">
+                                    <p>Thunder with Rain</p>
+                                </div>
+                                <div>
+                                    <h6>Fri</h6>
+                                    <p><time>12/07</time></p>
+                                </div>
+                                <div>
+                                    <p>32°C</p>
+                                    <p>27°C</p>
+                                </div>
                             </div>
                         </div>
                     </section>
                 </main>
                 <footer class="grid-item footer">
                     <div class="logo">
-                        <img src="../assets/logo.svg" alt="Brand logo">
-                        <h3>WeatherApp</h3>
+                        <img src="./assets/footer/logo.svg" alt="Brand logo">
+                        <h2>WeatherApp</h2>
                     </div>
                     <div class="email">
                         <form action="POST">
@@ -225,14 +274,13 @@
                         <p>090190-109290</p>
                     </div>
                     <div class="to-top">
-                        <img src="../assets/arrow-up.svg" alt="Go to top">
+                        <img src="./assets/footer/arrow-up.svg" alt="Go to top">
                         <p>To Top</p>
                     </div>
                 </footer>
             </div>
         </div>
     </div>
-    <script src="./scripts/script.js"></script>
 </body>
 
 </html>
